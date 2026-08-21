@@ -223,10 +223,30 @@ function updateCalculationUI() {
   if (headerCartCount) headerCartCount.innerText = totalQty;
   if (headerCartTotal) headerCartTotal.innerText = formatRupiah(subtotalAmount);
 
-  const mobileStickyQty = document.getElementById('mobileStickyQty');
-  const mobileStickyTotal = document.getElementById('mobileStickyTotal');
-  if (mobileStickyQty) mobileStickyQty.innerText = `${totalQty} Pcs Dipilih`;
-  if (mobileStickyTotal) mobileStickyTotal.innerText = formatRupiah(subtotalAmount);
+  // Update Native Mobile Bottom App Dock Cart Badge
+  const dockCartBadge = document.getElementById('dockCartBadge');
+  if (dockCartBadge) {
+    dockCartBadge.innerText = totalQty;
+    if (totalQty > 0) {
+      dockCartBadge.classList.add('active');
+    } else {
+      dockCartBadge.classList.remove('active');
+    }
+  }
+
+  // Update Mobile Floating Checkout Bar
+  const floatingPrice = document.getElementById('floatingPrice');
+  const floatingCount = document.getElementById('floatingCount');
+  const mobileFloatingBar = document.getElementById('mobileFloatingBar');
+  if (floatingPrice) floatingPrice.innerText = formatRupiah(subtotalAmount);
+  if (floatingCount) floatingCount.innerText = `(${totalQty} Pcs Dipilih)`;
+  if (mobileFloatingBar) {
+    if (totalQty > 0) {
+      mobileFloatingBar.classList.add('active');
+    } else {
+      mobileFloatingBar.classList.remove('active');
+    }
+  }
 
   // Update Sticky Right Summary Box
   const summaryTotalQty = document.getElementById('summaryTotalQty');

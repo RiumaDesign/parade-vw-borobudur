@@ -4118,53 +4118,199 @@ h1, h2, h3, h4, .brand-font {
     gap: 8px;
     text-align: center;
   }
+}
 
-  .mobile-sticky-bar {
+/* ==========================================================================
+   MOBILE APP DOCK (NATIVE SMARTPHONE BOTTOM NAVIGATION)
+   ========================================================================== */
+.mobile-app-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(11, 13, 19, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1.5px solid var(--gold-border);
+  z-index: 2500;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.75);
+}
+
+.mobile-dock-inner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.dock-item:active {
+  transform: scale(0.92);
+}
+
+.dock-icon-box {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.dock-item.active,
+.dock-item:hover {
+  color: var(--gold-hover);
+}
+
+.dock-item.active .dock-icon-box,
+.dock-item:hover .dock-icon-box {
+  color: var(--gold-primary);
+}
+
+.dock-order-highlight {
+  color: var(--gold-light);
+}
+
+.dock-icon-box.dock-cart {
+  width: 38px;
+  height: 38px;
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  box-shadow: var(--gold-glow);
+  margin-top: -14px;
+  border: 2px solid var(--bg-body);
+}
+
+.dock-cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--red-primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #fff;
+  display: none;
+}
+
+.dock-cart-badge.active {
+  display: flex;
+  animation: pulse 1.5s infinite;
+}
+
+.dock-order-label {
+  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 0.7rem;
+}
+
+/* Mobile Floating Bar */
+.mobile-floating-bar {
+  display: none;
+  position: fixed;
+  bottom: 72px;
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, rgba(24, 27, 38, 0.98) 0%, rgba(14, 16, 24, 0.98) 100%);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  z-index: 2400;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transform: translateY(120px);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mobile-floating-bar.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.floating-bar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.floating-price {
+  font-size: 1.15rem;
+  font-family: var(--font-mono);
+  color: var(--gold-hover);
+  line-height: 1.2;
+}
+
+.floating-count {
+  font-size: 0.7rem;
+  color: var(--text-cream);
+}
+
+.floating-btn-order {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  font-size: 0.84rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--gold-glow);
+  white-space: nowrap;
+}
+
+.floating-btn-order:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .mobile-app-dock {
     display: block;
   }
-
-  .modal-card {
-    padding: 16px 12px;
-    max-height: 94vh;
-  }
-
-  .ticket-header {
-    padding: 16px 10px;
-  }
-
-  .ticket-body {
-    padding: 16px 10px;
-  }
-
-  .ticket-meta-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .ticket-event-title {
-    font-size: 1.15rem;
-  }
-
-  .lookup-card {
-    padding: 20px 14px;
-  }
-
-  .lookup-input-wrap {
-    flex-direction: column;
-  }
-
-  .btn-gold-search {
-    padding: 13px;
-    justify-content: center;
+  .mobile-floating-bar {
+    display: flex;
   }
 }
 
-@media (max-width: 400px) {
-  .hero-highlights {
-    grid-template-columns: 1fr;
-  }
-  .gallery-thumbs-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 

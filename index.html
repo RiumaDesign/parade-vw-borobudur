@@ -2,7 +2,10 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#0b0c11">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Official Merchandise | Parade VW Safari Borobudur 2026</title>
   <meta name="description" content="Official Merchandise Store Kaos Resmi Parade VW Safari Borobudur 2026. Ride Classic, Celebrate Culture. Pesan kaos resmi cotton combed 24s sablon plastisol dengan mudah via WhatsApp.">
   <meta name="keywords" content="Parade VW Safari Borobudur 2026, Kaos VW Safari, Merchandise Borobudur, Kaos Event VW, VW Camat Borobudur">
@@ -1371,6 +1374,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- Native-Feel Mobile App Dock (Bottom Navigation Bar) -->
+  <aside class="mobile-app-dock" id="mobileAppDock" aria-label="Mobile Navigation">
+    <div class="mobile-dock-inner">
+      <a href="#beranda" class="dock-item" id="dockHome">
+        <div class="dock-icon-box"><i class="fa-solid fa-house"></i></div>
+        <span>Beranda</span>
+      </a>
+      <a href="#produk" class="dock-item" id="dockProduct">
+        <div class="dock-icon-box"><i class="fa-solid fa-shirt"></i></div>
+        <span>Kaos</span>
+      </a>
+      <a href="#event-info" class="dock-item" id="dockEvent">
+        <div class="dock-icon-box"><i class="fa-solid fa-calendar-check"></i></div>
+        <span>Rundown</span>
+      </a>
+      <a href="#size-chart" class="dock-item" id="dockSize">
+        <div class="dock-icon-box"><i class="fa-solid fa-ruler-combined"></i></div>
+        <span>Ukuran</span>
+      </a>
+      <a href="#order" class="dock-item dock-order-highlight" id="dockOrder">
+        <div class="dock-icon-box dock-cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="dock-cart-badge" id="dockCartBadge">0</span>
+        </div>
+        <span class="dock-order-label">Pesan</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Floating Quick Checkout Bar -->
+  <aside class="mobile-floating-bar" id="mobileFloatingBar">
+    <div class="floating-bar-left">
+      <span class="floating-label">Total Pesanan:</span>
+      <strong class="floating-price" id="floatingPrice">Rp 0</strong>
+      <span class="floating-count" id="floatingCount">(0 Pcs Dipilih)</span>
+    </div>
+    <a href="#order" class="floating-btn-order" id="floatingOrderBtn">
+      <span>Pesan Kaos</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </aside>
 
   <script src="js/app.js"></script>
 </body>
