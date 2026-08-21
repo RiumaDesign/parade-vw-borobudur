@@ -1,5 +1,5 @@
 /**
- * PARADE VW SAFARI BOROBUDUR 2026 - OFFICIAL EVENT HUB & PORTAL
+ * PARADE VW SAFARI BOROBUDUR 2026 - OFFICIAL EVENT PORTAL
  * Interactive Logic: Lightbox, Tabs, Posters & Smooth Mobile Navigation
  */
 
@@ -42,16 +42,6 @@ function switchHeroPoster(src, btn) {
   if (btn) btn.classList.add('active');
 }
 
-// Switch Merchandise Photoshoot Showcase
-function switchMerchPhoto(src, btn) {
-  const mainImg = document.getElementById('merchMainImg');
-  if (mainImg && src) {
-    mainImg.src = src;
-  }
-  document.querySelectorAll('#merchThumbsRow .thumb-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-}
-
 // Lightbox Fullscreen Preview Functions
 function openLightbox(imgSrc) {
   const modal = document.getElementById('lightboxModal');
@@ -91,7 +81,7 @@ function initDockNavigation() {
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       if (window.scrollY >= sectionTop) {
         current = section.getAttribute('id');
       }
