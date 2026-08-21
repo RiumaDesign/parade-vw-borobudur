@@ -1356,6 +1356,11 @@ h1, h2, h3, h4, .brand-font {
   border-color: #0088cc;
 }
 
+.sponsor-brand-slot.has-logo.green-bg {
+  background: #43a047;
+  border-color: #43a047;
+}
+
 .sponsor-brand-slot.has-logo img {
   max-width: 100%;
   max-height: 100%;
