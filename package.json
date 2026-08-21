@@ -1,0 +1,9 @@
+{
+  "name": "parade-vw-borobudur",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parade VW Safari Borobudur 2026",
+  "scripts": {
+    "build": "echo 'Building static website...'"
+  }
+}
