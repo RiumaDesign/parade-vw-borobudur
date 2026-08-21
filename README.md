@@ -46,7 +46,7 @@ Pastikan [Node.js](https://nodejs.org/) telah terinstal di komputer Anda:
 cd d:/KAOS
 
 # 2. Jalankan server lokal
-node server.js
+node dev-server.js
 
 # 3. Buka browser pada alamat:
 http://localhost:3000/
