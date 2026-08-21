@@ -1,6 +1,6 @@
 /**
  * PARADE VW SAFARI BOROBUDUR 2026 - OFFICIAL EVENT PORTAL
- * Interactive Logic: Lightbox, Tabs, Posters & Smooth Mobile Navigation
+ * Interactive Logic: Lightbox, Tabs, Dynamic Sponsor Background Color, Mobile Dock
  */
 
 // Official WhatsApp Admin Contact
@@ -11,7 +11,76 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initMobileMenu();
   initDockNavigation();
+  initSponsorBackgroundAdapter();
 });
+
+window.addEventListener('load', () => {
+  initSponsorBackgroundAdapter();
+});
+
+// Dynamic Sponsor Slot Background Color Adapter
+function initSponsorBackgroundAdapter() {
+  const slots = document.querySelectorAll('.sponsor-brand-slot.has-logo');
+  
+  slots.forEach(slot => {
+    const img = slot.querySelector('img');
+    if (!img) return;
+
+    function detectAndApplyColor() {
+      try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        const w = img.naturalWidth || img.width || 120;
+        const h = img.naturalHeight || img.height || 80;
+        if (w === 0 || h === 0) return;
+
+        canvas.width = w;
+        canvas.height = h;
+        ctx.drawImage(img, 0, 0, w, h);
+
+        // Sample 4 edge corners (top-left, top-right, bottom-left, bottom-right)
+        const corners = [
+          ctx.getImageData(2, 2, 1, 1).data,
+          ctx.getImageData(Math.max(1, w - 3), 2, 1, 1).data,
+          ctx.getImageData(2, Math.max(1, h - 3), 1, 1).data,
+          ctx.getImageData(Math.max(1, w - 3), Math.max(1, h - 3), 1, 1).data
+        ];
+
+        let totalR = 0, totalG = 0, totalB = 0, validSamples = 0;
+        corners.forEach(p => {
+          if (p[3] > 20) { // non-transparent
+            totalR += p[0];
+            totalG += p[1];
+            totalB += p[2];
+            validSamples++;
+          }
+        });
+
+        if (validSamples > 0) {
+          const r = Math.round(totalR / validSamples);
+          const g = Math.round(totalG / validSamples);
+          const b = Math.round(totalB / validSamples);
+          slot.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+          
+          const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+          if (luminance > 200) {
+            slot.style.borderColor = 'rgba(212, 175, 55, 0.45)';
+          } else {
+            slot.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+          }
+        }
+      } catch (err) {
+        // graceful fallback if canvas is restricted
+      }
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+      detectAndApplyColor();
+    } else {
+      img.addEventListener('load', detectAndApplyColor);
+    }
+  });
+}
 
 // Mobile menu toggle
 function initMobileMenu() {
@@ -21,7 +90,6 @@ function initMobileMenu() {
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-    // Close on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
