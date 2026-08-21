@@ -915,17 +915,15 @@ h1, h2, h3, h4, .brand-font {
 }
 
 .event-main-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: 36px;
-  align-items: start;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 .rundown-card {
   background: var(--bg-glass-card);
   border: 1.5px solid var(--gold-border);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 32px 36px;
   box-shadow: var(--shadow-card);
 }
 
@@ -1028,7 +1026,7 @@ h1, h2, h3, h4, .brand-font {
   background: var(--bg-surface-2);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
+  padding: 14px 18px;
 }
 
 .timeline-item.highlight .timeline-content {
@@ -1042,68 +1040,15 @@ h1, h2, h3, h4, .brand-font {
 }
 
 .timeline-content h4 {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--text-white);
   margin-bottom: 3px;
 }
 
 .timeline-content p {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.45;
-}
-
-.rundown-posters-side .poster-card-frame {
-  background: var(--bg-glass-card);
-  border: 1.5px solid var(--gold-border);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  box-shadow: var(--shadow-card);
-}
-
-.poster-card-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.poster-card-head h4 {
-  font-size: 0.92rem;
-  color: var(--text-white);
-}
-
-.poster-img-container {
-  position: relative;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  cursor: zoom-in;
-}
-
-.rundown-poster-thumbnail {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.poster-hover-layer {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--gold-hover);
-  font-size: 0.82rem;
-  font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.poster-img-container:hover .poster-hover-layer {
-  opacity: 1;
 }
 
 /* ==========================================================================
