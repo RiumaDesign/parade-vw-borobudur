@@ -1164,20 +1164,6 @@ function initGalleryListeners() {
   }
 }
 
-function openLightbox(src) {
-  const modal = document.getElementById('lightboxModal');
-  const img = document.getElementById('lightboxImg');
-  if (modal && img) {
-    img.src = src;
-    modal.classList.add('active');
-  }
-}
-
-function closeLightbox() {
-  const modal = document.getElementById('lightboxModal');
-  if (modal) modal.classList.remove('active');
-}
-
 // FAQ Accordion Toggle
 function toggleFaq(btn) {
   const item = btn.parentElement;
