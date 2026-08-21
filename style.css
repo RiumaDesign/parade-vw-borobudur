@@ -699,11 +699,530 @@ h1, h2, h3, h4, .brand-font {
   backdrop-filter: blur(16px);
 }
 
-.price-top-meta {
+/* ==========================================================================
+   EVENT CORE CARD & PORTAL HERO STYLES
+   ========================================================================== */
+.badge-status-closed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201, 24, 43, 0.3);
+  color: #ff99a8;
+  border: 1px solid var(--red-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.event-core-card {
+  background: var(--bg-glass-card);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+}
+
+.core-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.core-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.core-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.core-icon.gold {
+  background: rgba(212, 175, 55, 0.14);
+  color: var(--gold-hover);
+  border: 1px solid var(--gold-border);
+}
+
+.core-icon.red {
+  background: rgba(201, 24, 43, 0.14);
+  color: var(--red-hover);
+  border: 1px solid var(--red-border);
+}
+
+.core-icon.green {
+  background: rgba(37, 211, 102, 0.14);
+  color: var(--success);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.core-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.core-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.core-value {
+  font-size: 1.05rem;
+  color: var(--text-white);
+  line-height: 1.25;
+  margin: 2px 0;
+}
+
+.core-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.hero-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Event Poster Showcase Card in Hero */
+.event-poster-showcase-card {
+  background: var(--bg-surface-2);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.poster-preview-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 14px;
 }
+
+.poster-tag {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+}
+
+.badge-free-tag {
+  background: rgba(37, 211, 102, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.main-poster-wrapper {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  cursor: zoom-in;
+  margin-bottom: 14px;
+  background: #000;
+}
+
+.hero-poster-img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.main-poster-wrapper:hover .hero-poster-img {
+  transform: scale(1.02);
+}
+
+.poster-switch-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.poster-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 8px 6px;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.poster-tab-btn.active,
+.poster-tab-btn:hover {
+  background: rgba(212, 175, 55, 0.14);
+  border-color: var(--gold-primary);
+  color: var(--gold-hover);
+}
+
+/* ==========================================================================
+   LOCATION SECTION
+   ========================================================================== */
+.location-box-card {
+  background: var(--bg-glass-card);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.loc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201, 24, 43, 0.15);
+  color: var(--red-hover);
+  border: 1px solid var(--red-border);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.location-info-left h3 {
+  font-size: 1.6rem;
+  color: var(--text-white);
+  margin-bottom: 8px;
+}
+
+.loc-address {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.loc-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.loc-feat {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-cream);
+}
+
+.loc-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   MERCHANDISE ON-THE-SPOT VENUE SECTION
+   ========================================================================== */
+.merch-notice-box {
+  background: linear-gradient(135deg, rgba(201, 24, 43, 0.16) 0%, rgba(26, 18, 10, 0.95) 100%);
+  border: 1.5px solid var(--gold-border);
+  border-left: 5px solid var(--red-hover);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.notice-icon {
+  font-size: 1.6rem;
+  color: var(--gold-hover);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notice-text h4 {
+  font-size: 0.95rem;
+  color: var(--gold-hover);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+
+.notice-text p {
+  font-size: 0.88rem;
+  color: var(--text-cream);
+  line-height: 1.6;
+}
+
+.merch-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.merch-gallery-card, .merch-specs-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.stock-badge.closed {
+  background: rgba(201, 24, 43, 0.85);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.venue-price-pill {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(201, 24, 43, 0.1) 100%);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pill-top {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pill-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.pill-price .currency {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.pill-price .amount {
+  font-family: var(--font-mono);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.pill-price .unit {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.pill-note {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--gold-hover);
+  font-weight: 600;
+}
+
+.spec-grid-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.spec-mini-item {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.spec-mini-item i {
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.spec-mini-item strong {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--text-white);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.spec-mini-item p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.size-guide-box {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.size-box-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-cream);
+  margin-bottom: 10px;
+}
+
+.size-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.size-chips-list .size-badge {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-hover);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.size-vector-trigger {
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.size-vector-trigger:hover {
+  color: var(--gold-hover);
+}
+
+.btn-wa-inquiry {
+  width: 100%;
+  background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+  color: #ffffff;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--success-glow);
+  transition: var(--transition);
+}
+
+.btn-wa-inquiry:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* ==========================================================================
+   50+ DYNAMIC SPONSORS GRID STYLES
+   ========================================================================== */
+.sponsors-grid-note {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.all-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.sponsor-brand-slot {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px dashed rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-xs);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  transition: var(--transition);
+}
+
+.sponsor-brand-slot:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: var(--gold-hover);
+  border-style: solid;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.sponsor-brand-slot .slot-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.sponsor-brand-slot .slot-num {
+  font-family: var(--font-mono);
+  color: var(--gold-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.sponsor-brand-slot strong {
+  font-weight: 600;
+  color: var(--text-cream);
+}
+
 
 .price-label {
   font-size: 0.75rem;
@@ -3937,9 +4456,26 @@ h1, h2, h3, h4, .brand-font {
     display: none !important;
   }
 
-  /* Hero Mobile */
+  /* Hero Event Hub Mobile */
   .hero-section {
     padding: 36px 0 54px;
+  }
+
+  .core-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-action-buttons .btn-gold-hero,
+  .hero-action-buttons .btn-outline-gold {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   .hero-title-parade {
@@ -3961,24 +4497,34 @@ h1, h2, h3, h4, .brand-font {
     margin-bottom: 20px;
   }
 
-  .hero-price-card {
-    padding: 18px 16px;
-    margin-bottom: 24px;
-  }
-
-  .price-value .amount {
-    font-size: 2.5rem;
-  }
-
-  .price-cta {
-    flex-direction: column;
+  .loc-highlights-grid {
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .btn-gold-hero, .btn-outline-gold {
+  .loc-btn-row {
+    flex-direction: column;
+  }
+
+  .loc-btn-row .btn-gold-hero,
+  .loc-btn-row .btn-outline-gold {
     width: 100%;
-    padding: 14px 20px;
-    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  .merch-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .spec-grid-compact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .all-sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .hero-highlights {
