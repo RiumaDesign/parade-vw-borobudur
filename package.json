@@ -2,8 +2,7 @@
   "name": "parade-vw-borobudur",
   "version": "1.0.0",
   "private": true,
-  "description": "Parade VW Safari Borobudur 2026",
   "scripts": {
-    "build": "echo 'Building static website...'"
+    "build": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.mkdirSync('dist'); fs.cpSync('index.html','dist/index.html'); fs.cpSync('style.css','dist/style.css'); fs.cpSync('js','dist/js',{recursive:true}); fs.cpSync('assets','dist/assets',{recursive:true}); console.log('dist built');\""
   }
 }
