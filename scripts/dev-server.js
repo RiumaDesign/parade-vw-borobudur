@@ -14,9 +14,11 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml'
 };
 
+const ROOT_DIR = path.join(__dirname, '..');
+
 function handler(req, res) {
   const urlPath = req.url.split('?')[0];
-  let filePath = path.join(__dirname, urlPath === '/' ? 'index.html' : urlPath);
+  let filePath = path.join(ROOT_DIR, urlPath === '/' ? 'index.html' : urlPath);
   let ext = path.extname(filePath).toLowerCase();
 
   // If path has no extension, check if HTML file exists
@@ -36,7 +38,7 @@ function handler(req, res) {
     if (err) {
       if (err.code === 'ENOENT') {
         // Fallback to index.html for SPA/Static routing
-        const indexPath = path.join(__dirname, 'index.html');
+        const indexPath = path.join(ROOT_DIR, 'index.html');
         fs.readFile(indexPath, (err2, indexContent) => {
           if (err2) {
             res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
