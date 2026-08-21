@@ -8,7 +8,6 @@ const ADMIN_PHONE = '6282138800401';
 
 // DOM Elements Initialization
 document.addEventListener('DOMContentLoaded', () => {
-  purgeLegacyTickerContact();
   initNavbarScroll();
   initMobileMenu();
   initDockNavigation();
@@ -16,21 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
-  purgeLegacyTickerContact();
   initSponsorBackgroundAdapter();
 });
-
-// Purge any cached contact box in ticker
-function purgeLegacyTickerContact() {
-  document.querySelectorAll('.ticker-box').forEach(box => {
-    const text = (box.textContent || '').toUpperCase();
-    if (text.includes('KONTAK PANITIA') || text.includes('PINKY') || text.includes('0401')) {
-      const prev = box.previousElementSibling;
-      if (prev && prev.classList.contains('ticker-divider')) prev.remove();
-      box.remove();
-    }
-  });
-}
 
 // Dynamic Sponsor Slot Background Color Adapter
 function initSponsorBackgroundAdapter() {
